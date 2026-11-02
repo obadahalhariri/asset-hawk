@@ -1,0 +1,10 @@
+# Ignoriere die Konfigurationsdateien von IntelliJ IDEA
+.idea/
+*.iml
+
+# Ignoriere kompilierte Java-Dateien (Maven Build-Ordner)
+backend/target/
+
+frontend/node_modules/
+
+.env
