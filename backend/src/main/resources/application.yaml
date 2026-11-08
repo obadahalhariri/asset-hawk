@@ -1,3 +1,13 @@
 spring:
   application:
-    name: backend
+    name: asset-hawk-backend
+
+  # Lädt die .env-Datei aus dem übergeordneten Ordner (asset-hawk) als Properties
+  # auf einem echten Produktionsserver in der Cloud gibt es später oft keine .env-Datei auf der Festplatte, weil die Variablen dort direkt von Docker oder Kubernetes in das Betriebssystem injiziert werden. Mit optional: stürzt Spring Boot nicht ab, falls die Datei auf dem Server fehlt, sondern liest dort einfach die echten Systemvariablen!
+  config:
+    import: optional:file:../.env[.properties]
+
+  datasource:
+    url: jdbc:postgresql://localhost:${POSTGRES_PORT}/${POSTGRES_DB_NAME}
+    username: ${POSTGRES_DB_USER}
+    password: ${POSTGRES_DB_PASSWORD}
