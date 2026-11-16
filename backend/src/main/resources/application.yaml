@@ -11,3 +11,8 @@ spring:
     url: jdbc:postgresql://localhost:${POSTGRES_PORT}/${POSTGRES_DB_NAME}
     username: ${POSTGRES_DB_USER}
     password: ${POSTGRES_DB_PASSWORD}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
